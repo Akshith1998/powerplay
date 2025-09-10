@@ -1,0 +1,97 @@
+$bg: #ffffff;
+$surface: #f6f8fa;
+$border: #e6eef5;
+$text: #24292f;
+$muted: #6b7278;
+$accent: #0366d6;
+$focus-ring: rgba(3, 102, 214, 0.12);
+$radius: 10px;
+
+.root {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 720px;
+    padding: 6px;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+}
+
+.input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    padding: 10px 8px;
+    font-size: 14px;
+    line-height: 1;
+    color: $text;
+    outline: none;
+
+    &::placeholder {
+        color: $muted;
+        opacity: 1;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 5px $focus-ring;
+        border-radius: 6px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}
+
+.clearBtn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $accent;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 140ms ease, transform 80ms ease, box-shadow 120ms ease;
+
+    &:hover {
+        background: rgba(3, 102, 214, 0.06);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 5px $focus-ring;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+@media (max-width: 420px) {
+    .root {
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .input {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .clearBtn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}

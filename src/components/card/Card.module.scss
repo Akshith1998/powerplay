@@ -29,7 +29,6 @@ $focus-ring: rgba(3, 102, 214, 0.12);
         &:hover {
             transform: translateY(-4px);
             box-shadow: $shadow-strong;
-            border-color: darken($border, 4%);
         }
     }
 

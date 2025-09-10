@@ -1,0 +1,78 @@
+$bg: #ffffff;
+$surface: #f7fafc;
+$border: #e6eef5;
+$text: #111827;
+$muted: #6b7280;
+$accent: #f59e0b;
+$accent-strong: #d97706;
+$focus-ring: rgba(99, 102, 241, 0.16);
+$radius: 10px;
+
+.bookmarkBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    min-height: 36px;
+    border-radius: 8px;
+    border: 1px solid $border;
+    background: $surface;
+    color: $text;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 120ms ease, box-shadow 140ms ease, background 140ms ease, color 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &[aria-pressed="false"] {
+        color: $muted;
+        background: transparent;
+    }
+
+    &[aria-pressed="true"] {
+        color: $accent-strong;
+        background: linear-gradient(180deg, rgba(245, 158, 11, 0.06), transparent);
+        border-color: rgba($accent-strong, 0.14);
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 6px $focus-ring;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+        transform: none;
+    }
+
+    &.compact {
+        padding: 4px 8px;
+        font-size: 13px;
+        gap: 6px;
+        min-height: 32px;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 420px) {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}

@@ -1,0 +1,24 @@
+$max-width: 1080px;
+$gap: 16px;
+$padding: 16px;
+$bg: #ffffff;
+$surface: #f8fafc;
+$muted: #6b7280;
+$card-elevation: 0 1px 2px rgba(16, 24, 40, 0.03);
+$card-elevation-strong: 0 6px 18px rgba(16, 24, 40, 0.06);
+$radius: 12px;
+$entry-duration: 220ms;
+$entry-ease: cubic-bezier(.2, .9, .2, 1);
+
+.root {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $padding;
+    box-sizing: border-box;
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: $gap;
+    align-items: start;
+}
